@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  xtls-reality:
+    image: xtls-reality:latest
+    environment:
+      - SNI=www.samsung.com
+      - MASTER_SHORT_ID=ab1337cd
+    container_name: xtls-reality
+    restart: always
+    ports:
+      - "443:443"
+    volumes:
+      - xtls-config:/opt/xray/config
+volumes:
+  xtls-config:
