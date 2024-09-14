@@ -34,7 +34,7 @@ RUN set -e &&\
 
 WORKDIR /opt/xray
 
-COPY ./deployment/config/default-config.json ./config/config.json
+COPY ./deployment/config/default-config.json ./default-config/config.json
 COPY ./scripts ./scripts
 RUN chmod -R 755 ./scripts
 COPY ./entrypoint.sh .
