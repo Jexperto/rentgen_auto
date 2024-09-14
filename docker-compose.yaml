@@ -4,8 +4,7 @@ services:
     image: xtls-reality:latest
     build: .
     environment:
-      - SNI=www.samsung.com
-      - MASTER_SHORT_ID=ab1337cd
+      - SNI=dl.google.com
     container_name: xtls-reality
     restart: always
     ports:

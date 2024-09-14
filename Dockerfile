@@ -2,7 +2,6 @@ FROM alpine:3.18
 
 ARG XRAY_CORE_VERSION=v1.8.4
 ENV SNI=dl.google.com
-ENV MASTER_SHORT_ID=aabbccdd
 
 RUN apk add --no-cache \
     wget \
@@ -35,8 +34,7 @@ RUN set -e &&\
 
 WORKDIR /opt/xray
 
-COPY ./config/default-config.json ./config/config.json
-COPY ./config/default-config.json ./config/default-config.json
+COPY ./deployment/config/default-config.json ./config/config.json
 COPY ./scripts ./scripts
 RUN chmod -R 755 ./scripts
 COPY ./entrypoint.sh .
