@@ -75,7 +75,8 @@ jq --arg uuid "$CLIENT_UUID" \
           {
             id: $uuid,
             email: (if $nickname != "" then ($nickname + "@" + "reality") else null end),
-            flow: "xtls-rprx-vision"
+            flow: "xtls-rprx-vision",
+            shortId: $short_id
           }
         ] |
         .streamSettings.realitySettings.shortIds += [$short_id]
