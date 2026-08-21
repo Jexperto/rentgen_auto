@@ -10,7 +10,7 @@ then
   /opt/xray/xray x25519 > config/keys
 
   #Create files with Public & Private keys
-  awk '/Password/{print $2}' /opt/xray/config/keys > /opt/xray/config/public
+  awk '/Password/{print $3}' /opt/xray/config/keys > /opt/xray/config/public
   awk '/PrivateKey/{print $2}' /opt/xray/config/keys > /opt/xray/config/private
 
   PRIVATE=$(cat config/private)
